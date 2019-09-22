@@ -18,6 +18,7 @@ y = iris.target
 low = 0
 high = 1
 
+# loop to promt user for a number within range, 
 while True:
     try:
         print("")
