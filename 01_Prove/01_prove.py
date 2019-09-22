@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
-"""
-Anthony Lasley
-CS 450 Machine Learning
-Prove 01
-"""
+# """
+# Anthony Lasley
+# CS 450 Machine Learning
+# Prove 01
+# """
 
 from sklearn import datasets
 from sklearn.naive_bayes import GaussianNB
@@ -12,9 +12,25 @@ from sklearn.metrics import accuracy_score
 
 # part 1
 iris = datasets.load_iris()
+X = iris.data
+y = iris.target
+
+low = 0
+high = 1
+
+while True:
+    try:
+        print("")
+        number = float(input("Please enter test size as a decimal: "))
+        if low < number < high:
+            break
+        else:
+            print("Value is not in range. Range is between 0 - 1")
+    except ValueError:
+            print("Invalid Input")
 
 # part 2
-dataTrain, dataTest, targetTrain, targetTest = train_test_split(iris.data, iris.target, test_size = 0.3)
+dataTrain, dataTest, targetTrain, targetTest = train_test_split(iris.data, iris.target, test_size = number)
 
 class HardCodedClassifier:
     def __init__(self):
