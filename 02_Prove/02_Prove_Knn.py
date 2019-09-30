@@ -5,6 +5,9 @@ from sklearn.naive_bayes import GaussianNB
 import numpy as np
 import operator
 import math
+from sklearn.neighbors import KNeighborsClassifier
+
+
 # find the euclidean distance between the arrays
 def getDistance(x, y, length):
     distance = 0
@@ -81,9 +84,10 @@ for i in range(len(dataTest)):
     predict.append(answer)
 
 # built in classifier
-classifier = GaussianNB()
+classifier = KNeighborsClassifier(n_neighbors=number)
 classifier.fit(dataTrain, targetTrain)
 targetPredicted = classifier.predict(dataTest)
+
 
 #find accuracy of both
 score = accuracy_score(targetPredicted, targetTest)

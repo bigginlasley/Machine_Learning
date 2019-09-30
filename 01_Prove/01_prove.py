@@ -62,7 +62,7 @@ classifier.fit(dataTrain, targetTrain)
 targetPredicted = classifier.predict(dataTest)
 score = accuracy_score(targetPredicted, targetTest)
 
-print("{:.2%}".format(score));
+print("{:.2%}".format(score))
 
 
 # part 5
@@ -72,5 +72,5 @@ targets_predicted = fixed_classifier.predict(dataTest)
 
 # find accuracy and print
 broken_score = accuracy_score(targets_predicted, targetTest)
-print("{:.2%}".format(broken_score));
+print("{:.2%}".format(broken_score))
 
